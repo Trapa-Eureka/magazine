@@ -2,7 +2,7 @@
 
 ![magazine](./image/magazine.png)
 
-# portfolio web-page Layout
+# Magazine Layout
 
 ver.1 - Simple
 
