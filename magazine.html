@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/magazine.css">
+        <title>Urban Magazine</title>
+
+        <style>
+            :root {
+   
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            h1, h2, h3, h4, h5, h6, body, html, body, p {
+                margin: 0;
+                padding: 0;
+            }
+
+            html, body {
+                height: 100%;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-color: #f4f4f4;
+                padding-left: 50px;
+                display: grid;
+                grid-template-rows: 1fr 3fr 1fr;
+            }
+
+            .nav {
+                width: 50px;
+                background-color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 40px 10px;
+            }
+            .nav .nav__icon {
+                margin-bottom: auto;
+            }
+            .nav__icon svg {
+                display: block;
+                margin-top: -16px;
+            }
+            .nav .nav__list {
+                margin-bottom: auto;
+                display: flex;
+                list-style: none;
+                transform: rotate(-90deg);
+                font-weight: 600;
+            }
+            .nav .dot svg {
+                fill: #e22424;
+            }
+            .nav .nav__list > * {
+                margin-right: 10px;
+            }
+            .nav__list .nav__divider {
+                font-weight: 300;
+                font-size: 13px;
+                margin-top: 1px;
+            }
+
+            .header {
+                margin-top: 25px;
+                text-align: center;
+                align-self: start;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 10px;
+            }
+            .header .header__title {
+                margin-right: auto;
+                margin-left: auto;
+                font-weight: 500;
+                font-size: 16px;
+            }
+            .page__num .pagination__number--current {
+                text-decoration: line-through;
+            }
+            .page__num .pagination__number {
+                margin-right: 7px;
+            }
+            .page__num .pagination__number:last-child {
+                margin-right: 0;
+            }
+
+            .pagination {
+                display: grid;
+                grid-template-columns: 51% 49%;
+                width: 100%;
+                height: 50px;
+                margin-top: 60px;
+            }
+            .pagination .page__num, .pagination .btn {
+                display: flex;
+                justify-self: flex-end;
+                align-self: flex-start;
+            }
+            .pagination .btn.right {
+                display: block;
+                margin-right: 10px;
+                transform: rotate(90deg);
+            }
+            .btn .btn__text {
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            .slider {
+                padding: 0 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .slider .slider__arrow:first-child {
+                color: #8e8e8e;
+                margin-right: 20px;
+            }
+            .slider .slider__arrow:last-child {
+                color: #8e8e8e;
+                margin-left: 20px;
+            }
+
+            .slider .slider__content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                height: 74vh;
+                grid-gap: 20px;
+                background-color: #fff;
+            }
+
+            .slider__content .slider__photo {
+                background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/02/11/10-Prague.jpg');
+                background-size: cover;
+
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-self: center;
+                justify-content: center;
+                width: 80%;
+            }
+            .info .info__pre-title {
+                text-transform: uppercase;
+                color: #3498db;
+                font-weight: 300;
+            }
+            .info .info__pre-title, .info .info__title, .info .info__intro {
+                margin-bottom: 40px;
+            }
+            .info .info__title {
+                font-size: 44px;
+                text-align: center;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 400;
+            }
+            .info .info__intro {
+                font-style: italic;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .info .info_date {
+                text-transform: uppercase;
+            }
+        </style>
+    </head>
+    <body>
+       <nav class="nav">
+            <span class="nav__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24">
+                    <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
+                </svg>
+            </span>
+            <ul class="nav__list">
+                <li class="nav__list-item">About</li>
+                <span class="nav__divider">✗</span>
+                <li class="nav__list-item">Categories</li>
+                <span class="nav__divider">x</span>
+                <li class="nav__list-item">Features</li>
+            </ul>
+            <div class="dot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="12"/>
+                </svg>
+            </div>
+        </nav>
+
+        <header class="header">
+            <h1 class="header__title">Popular Stories</h1>
+            <span class="header__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M23.822 20.88l-6.353-6.354c.93-1.465 1.467-3.2 1.467-5.059.001-5.219-4.247-9.467-9.468-9.467s-9.468 4.248-9.468 9.468c0 5.221 4.247 9.469 9.468 9.469 1.768 0 3.421-.487 4.839-1.333l6.396 6.396 3.119-3.12zm-20.294-11.412c0-3.273 2.665-5.938 5.939-5.938 3.275 0 5.94 2.664 5.94 5.938 0 3.275-2.665 5.939-5.94 5.939-3.274 0-5.939-2.664-5.939-5.939z"/>
+                </svg>
+            </span>
+        </header>
+
+        <main class="slider">
+            <span class="slider__arrow">←</span>
+            <section class="slider__content">
+                <div class="slider__photo"></div>
+                <div class="info">
+                    <h5 class="info__pre-title">LifeStyle</h5>
+                    <h2 class="info__title">The Joys and Pitfalls of Solo Travel</h2>
+                    <p class="info__intro">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aliquid magni distinctio, 
+                        iusto officiis enim ab! Similique facere, fuga ea reprehenderit libero nobis. Quo porro ut ipsum 
+                        omnis reiciendis expedita?
+                    </p>
+                    <small class="info__date">April 16. 2019</small>
+                </div>
+            </section>
+            <span class="slider__arrow">→</span>
+        </main>
+
+        <footer class="pagination">
+            <div class="page__num">
+                <span class="pagination__number pagination__number--current">1</span>
+                <span class="pagination__number">2</span>
+                <span class="pagination__number">3</span>
+                <span class="pagination__number">4</span>
+            </div>
+            <div class="btn right">
+                <span class="btn__text">NEXT</span>
+            </div>
+        </footer>
+    </body>
+</html>
